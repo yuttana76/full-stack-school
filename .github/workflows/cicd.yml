@@ -15,10 +15,11 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}  
       
       - name: Create env file
-        run: |
-        touch .env
-        echo "${{ secrets.PROD_ENV_FILE }}" > .env
-         
+        run: touch .env
+
+      - name: Assign value to .env
+        run: echo "${{ secrets.PROD_ENV_FILE }}" > .env
+        
       - name: Build Docker Image
         run: docker build -t yuttana76/school-app .
 
