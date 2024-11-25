@@ -36,4 +36,4 @@ jobs:
       - name: Delete old container
         run: docker rm -f school-app
       - name: Run Docker Container
-        run: docker run -d -p 3000:80 --name school-app yuttana76/bom-school-app
+        run: docker run -d -p 3000:3000 --name school-app yuttana76/school-app
