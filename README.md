@@ -26,3 +26,7 @@ To learn more about Next.js, take a look at the following resources:
 - [Next.js](https://nextjs.org/learn)
 
 #DEPLOYMENT BOM dev
+
+AWS server
+http://3.105.229.166:3000/
+
