@@ -3,7 +3,7 @@ name: Deploy School Application
 on: 
   push:
     branches:
-      - main
+      - stage-X
 
 jobs:
   build:
@@ -31,17 +31,9 @@ jobs:
     needs: build
     runs-on: self-hosted 
     steps:
-      - name: Stop container
-        run: docker stop school-app
-
-      - name: Delete images
-        run: docker rmi -f $(docker images --filter "dangling=true" -q --no-trunc)
-
       - name: Pull image from docker hub
         run: docker pull yuttana76/school-app:latest 
-
       - name: Delete old container
         run: docker rm -f school-app
-
       - name: Run Docker Container
         run: docker run -d -p 3000:3000 --name school-app yuttana76/school-app
