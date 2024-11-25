@@ -35,7 +35,7 @@ jobs:
         run: docker stop school-app
 
       - name: Delete images
-        run: docker rmi -f $(docker images --filter "dangling=true" -q --no-trunc)
+        run: docker image prune -f
 
       - name: Pull image from docker hub
         run: docker pull yuttana76/school-app:latest 
