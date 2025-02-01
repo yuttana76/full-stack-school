@@ -27,6 +27,32 @@ To learn more about Next.js, take a look at the following resources:
 
 #DEPLOYMENT BOM dev
 
-AWS server
-http://3.105.229.166:3000/
 
+# AWS (EC2)
+Setup environment.
+
+## Install Docker AWS : TIME 8:23
+>sudo apt-get update
+>sudo apt-get install docker.io -y
+>sudo systemctl start docker
+>sudo docker run hello-world
+
+>sudo chmod 666 /var/run/docker.sock
+>sudo systemctl enable docker
+>docker --version
+>docker ps
+
+## Install Github runner both of nodejs & react
+Setting/Action/Runners/New self-hosted runner
+
+Runner in backgroun
+follow in steping
+>sudo ./svc.sh install
+>sudo ./svc.sh start
+
+# github setup  secret key
+Actions secrets and variables
+'''
+DOCKER_PASSWORD
+DOCKER_USERNAME
+'''

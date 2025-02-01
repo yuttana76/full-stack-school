@@ -13,15 +13,15 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     
-  app:
-    build: .
-    container_name: nextjs_app
-    ports:
-      - '3000:3000'
-    environment:
-      - DATABASE_URL: postgresql://bomdev:password@localhost:5432/school
-    depends_on:
-      - postgres
+  # app:
+  #   build: .
+  #   container_name: nextjs_app
+  #   ports:
+  #     - '3000:3000'
+  #   environment:
+  #     - DATABASE_URL: postgresql://bomdev:password@localhost:5432/school
+  #   depends_on:
+  #     - postgres
 
 volumes:
   postgres_data:
